@@ -136,7 +136,7 @@ gh run list --repo <owner/name> --branch <branch> --limit 10
 Return three buckets:
 
 - **Autonomous candidates:** fixable/landable without more product input — URL, why it qualifies, required verification, confidence. Selection for review, not permission to start unless the user also asked for autonomous execution.
-- **Needs maintainer:** blocked on product direction, credentials/access, live proof unavailable, security/privacy judgment, or TonkaToyXL comment requesting changes.
+- **Needs maintainer:** blocked on product direction, credentials/access, live proof unavailable, security/privacy judgment, or maintainer comment requesting changes.
 - **Defer/close/supersede:** stale, duplicate, lower-quality, or overlapping items.
 
 For plausible autonomous candidates on risky PRs (security, broad diff, new account), optionally spawn a **Task** subagent for trust/feasibility review before presenting.
@@ -258,7 +258,7 @@ Autonomous candidates:
   Blocker: none / ...
   Next: exact action.
 
-Needs TonkaToyXL:
+Needs maintainer:
 - https://github.com/owner/repo/issues/124 — ...
 
 Defer/close:
@@ -280,7 +280,7 @@ Top queues:
 Autonomous candidates:
 - <URL-first items>
 
-Needs TonkaToyXL:
+Needs maintainer:
 - <URL-first items>
 
 Skipped:
