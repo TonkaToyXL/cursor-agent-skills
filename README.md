@@ -1,40 +1,39 @@
-# cursor-agent-skills
+# Cursor Agent Skills
 
-A curated pack of agent skills for Cursor and compatible coding agents.
+Curated markdown skills for Cursor and compatible coding agents. Copy a folder into `~/.cursor/skills/` or `~/.agents/skills/` — agents pick them up by trigger phrase.
 
-Each skill is a markdown playbook with YAML frontmatter. Copy a folder into your agent skills directory (for example `~/.agents/skills/` or `~/.cursor/skills/`) and the agent will pick it up by trigger phrase.
-
-## Skills included
+## Skills
 
 | Skill | Trigger | Purpose |
 |-------|---------|---------|
-| [diagnose](./diagnose/SKILL.md) | "diagnose this", "debug this" | Structured bug diagnosis loop with feedback-loop-first discipline |
-| [workflow-graduation](./workflow-graduation/SKILL.md) | repeated workflows | Turn one-off agent work into durable skills, scripts, and SOPs |
-| [caveman-commit](./caveman-commit/SKILL.md) | "write a commit", "/commit" | Terse Conventional Commits messages — why over what |
-| [github-project-triage](./github-project-triage/SKILL.md) | "triage", GitHub queue work | Maintainer triage cards for issues, PRs, and CI via `gh` |
+| [diagnose](./diagnose/SKILL.md) | "diagnose this", "debug this" | Structured bug diagnosis loop |
+| [workflow-graduation](./workflow-graduation/SKILL.md) | repeated workflows | Turn one-off work into durable skills and scripts |
+| [terse-commit](./terse-commit/SKILL.md) | "write a commit", "/commit" | Terse Conventional Commits — why over what |
+| [github-triage](./github-triage/SKILL.md) | "triage", GitHub queue work | Maintainer triage cards for issues, PRs, and CI |
 
-## Install one skill
-
-```bash
-mkdir -p ~/.agents/skills/diagnose
-cp diagnose/SKILL.md ~/.agents/skills/diagnose/SKILL.md
-```
-
-For `github-project-triage`, also copy the helper script:
+## Install
 
 ```bash
-mkdir -p ~/.agents/skills/github-project-triage/scripts
-cp github-project-triage/SKILL.md ~/.agents/skills/github-project-triage/SKILL.md
-cp github-project-triage/scripts/github-activity.sh ~/.agents/skills/github-project-triage/scripts/
-chmod +x ~/.agents/skills/github-project-triage/scripts/github-activity.sh
+SKILLS=~/.cursor/skills   # or ~/.agents/skills
+
+mkdir -p "$SKILLS/diagnose"
+cp diagnose/SKILL.md "$SKILLS/diagnose/SKILL.md"
 ```
 
-## Design principles
+For **github-triage**, also copy the helper script:
 
-- **Small surface area** — each skill does one job well
-- **Trigger-driven** — frontmatter `description` is how agents select skills
-- **Verification gates** — done means tested, not assumed
-- **No secrets** — skills describe process, not credentials
+```bash
+mkdir -p "$SKILLS/github-triage/scripts"
+cp github-triage/SKILL.md "$SKILLS/github-triage/SKILL.md"
+cp github-triage/scripts/github-activity.sh "$SKILLS/github-triage/scripts/"
+chmod +x "$SKILLS/github-triage/scripts/github-activity.sh"
+```
+
+## Principles
+
+- One skill, one job
+- Trigger-driven selection via YAML frontmatter
+- No secrets in skill files
 
 ## License
 

@@ -1,9 +1,9 @@
 ---
-name: github-project-triage
+name: github-triage
 description: "Use when the user types triage or asks to triage GitHub issues, PRs, queues, CI, blockers, risk, proof, next actions, or autonomous GitHub maintainer work."
 ---
 
-# GitHub Project Triage
+# GitHub Triage
 
 Use this skill when the user types `triage`, asks about GitHub issues/PRs/queues, or says `do work autonomously`, `keep going`, or `fix what you can on GitHub`.
 
